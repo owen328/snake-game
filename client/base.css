@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.app {
+    margin: auto;
+    width: 50em;
+    height: 50em;
+    background-color: black;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+    grid-gap: 1px;
+}
+
+.snake {
+    background-color: greenyellow;
+}
+
+.food {
+    background-color: orangered;
+}
