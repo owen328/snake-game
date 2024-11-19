@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.app {
+#game {
     margin: auto;
     width: 50em;
     height: 50em;

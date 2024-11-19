@@ -1,10 +1,9 @@
-import {app} from "./config.js";
 import {generateRandomPosition} from "./utils.js";
 import {snakePositions} from "./snake.js";
 
 export let food = {};
 
-export const drawFood = () => {
+export const drawFood = (app) => {
     const div = document.createElement('div');
     div.classList.add('food');
     div.style.gridColumnStart = food.x.toString();

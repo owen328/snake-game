@@ -1,5 +1,4 @@
 import {food, initGood} from "./food.js";
-import {app} from "./config.js";
 import {generateRandomPosition} from "./utils.js";
 
 export let snakePositions = [];
@@ -22,7 +21,7 @@ export const changeMove = e => {
 }
 
 
-export const drawSnake = () => {
+export const drawSnake = (app) => {
     for (let i = 0; i < snakePositions.length; i++) {
         const currentPo = snakePositions[i];
         const div = document.createElement('div');
@@ -38,7 +37,6 @@ export const initSnake = () => {
     snakePositions = [...DEFAULT_POSITIONS];
     snakePositions.pop();
     snakePositions.push(generateRandomPosition());
-    
 
 }
 
@@ -51,6 +49,18 @@ export const changeSnakePos = () => {
     snakePositions.pop();
 }
 
+
+export const checkIfEatSelf = () => {
+    if (snakePositions.length <= 4) return false;
+    
+    for (let i = 1; i < snakePositions.length; i++) {
+        if (snakePositions[0].x === snakePositions[i].x && snakePositions[0].y === snakePositions[i].y) {
+            console.log(snakePositions[0], i , snakePositions[i]);
+            return true;
+        }
+    }
+    return false;
+}
 
 
 export const checkIfEatFood = () => {
