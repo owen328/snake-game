@@ -55,7 +55,7 @@ export const changeSnakePos = () => {
 
 export const checkIfEatFood = () => {
     if (snakePositions[0].x === food.x && snakePositions[0].y === food.y) {
-        snakePositions.unshift({x:snakePositions[0].x,y:snakePositions[0].y});
+        snakePositions.push({x:snakePositions[snakePositions.length - 1].x,y:snakePositions[snakePositions.length - 1].y});
         initGood();
     }
 }
